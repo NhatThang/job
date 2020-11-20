@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: rgb(228, 228, 228);
+}
+
+.info {
+    background: #f3f3f3 !important;
+}
+
+select {
+    background: #a4cba9 !important;
+    font-size: 12px !important;
+}
+
+::placeholder {
+    color: rgb(11, 92, 22) !important;
+    opacity: 1;
+    font-size: 12px;
+}
+
+::-ms-input-placeholder {
+    color: rgb(11, 92, 22) !important;
+}
+
+::-ms-input-placeholder {
+    color: rgb(11, 92, 22) !important;
+}
+
+.color-content {
+    color: rgb(11, 92, 22);
+    font-weight: 700;
+}
+
+.btn-submit {
+    text-align: center;
+}
+
+.btn-submit>button {
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 10px 100px;
+    border: none;
+    background: linear-gradient(180deg, #ff6a00, #ee0979);
+    border-radius: 10px;
+}
