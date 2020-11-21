@@ -367,6 +367,7 @@
                                     <tbody>
                                         <?php 
                                             require_once '../DB/Connect.php';
+                                            
                                             $idDetail = isset($_GET['idDetail']) ? $_GET['idDetail'] : "";
                                             try {
                                                 $sql = "SELECT * FROM user WHERE id = :id ORDER BY id ASC";

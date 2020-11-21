@@ -2,7 +2,13 @@
     require_once '../DB/Connect.php';
     require_once '../helper/helper.php';
     session_start();
-    $idDelete = isset($_GET['idDelete']) ? $_GET['idDelete'] : "";
+    function check_character($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+    $idDelete = isset($_GET['idDelete']) ? check_character($_GET['idDelete']) : "";
     try {
         $sql = "DELETE FROM user WHERE id = :id";
         $pre = $conn->prepare($sql);

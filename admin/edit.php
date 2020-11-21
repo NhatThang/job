@@ -339,7 +339,13 @@
                         <div class="card-body">
                             <form action="update.php" method="post">
                                 <?php
-                                    $idEdit = isset($_GET['idEdit']) ? $_GET['idEdit'] : '';
+                                    function check_character($data) {
+                                        $data = trim($data);
+                                        $data = stripslashes($data);
+                                        $data = htmlspecialchars($data);
+                                        return $data;
+                                    }
+                                    $idEdit = isset($_GET['idEdit']) ? check_character($_GET['idEdit']) : '';
                                     $sql = "SELECT * FROM user WHERE id = :id";
                                     $pre = $conn->prepare($sql);
                                     $pre->bindParam(':id', $idEdit, PDO::PARAM_INT);

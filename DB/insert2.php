@@ -4,14 +4,20 @@
     require_once '../helper/helper.php';
 
     try {
-        $hovaten = isset($_POST['hovaten']) ? $_POST['hovaten'] : "";
-        $email = isset($_POST['email']) ? $_POST['email'] : "";
-        $sodienthoai = isset($_POST['sodienthoai']) ? $_POST['sodienthoai'] : "";
-        $diachi = isset($_POST['diachi']) ? $_POST['diachi'] : "";
-        $hinhthucvay = isset($_POST['hinhthucvay']) ? $_POST['hinhthucvay'] : "";
-        $sotienvay = isset($_POST['sotienvay']) ? $_POST['sotienvay'] : "";
-        $congviec = isset($_POST['congviec']) ? $_POST['congviec'] : "";
-        $submit = isset($_POST['submit']) ? $_POST['submit'] : "";
+        function check_character($data) {
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        }
+        $hovaten = isset($_POST['hovaten']) ? check_character($_POST['hovaten']) : "";
+        $email = isset($_POST['email']) ? check_character($_POST['email']) : "";
+        $sodienthoai = isset($_POST['sodienthoai']) ? check_character($_POST['sodienthoai']) : "";
+        $diachi = isset($_POST['diachi']) ? check_character($_POST['diachi']) : "";
+        $hinhthucvay = isset($_POST['hinhthucvay']) ? check_character($_POST['hinhthucvay']) : "";
+        $sotienvay = isset($_POST['sotienvay']) ? check_character($_POST['sotienvay']) : "";
+        $congviec = isset($_POST['congviec']) ? check_character($_POST['congviec']) : "";
+        $submit = isset($_POST['submit']) ? check_character($_POST['submit']) : "";
 
         $sql = "INSERT INTO user(hovaten, email, sodienthoai, diachi, hinhthucvay, sotienvay, congviec, trangthai) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         $pre = $conn->prepare($sql);

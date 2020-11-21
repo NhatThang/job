@@ -11,9 +11,8 @@
         }
         $taikhoan = isset($_POST['taikhoan']) ? check_character(($_POST['taikhoan'])) : "";
         $matkhau = isset($_POST['matkhau']) ? check_character(($_POST['matkhau'])) : "";
-        $md5mk = md5($matkhau);
+        $md5mk = check_character(md5($matkhau));
         if(isset($_POST['taikhoan']) && isset($_POST['matkhau'])){
-
             $sql = "SELECT * FROM user WHERE taikhoan = :taikhoan AND password = :matkhau AND roles='admin'";
             $pre = $conn->prepare($sql);
             $pre->bindParam(':taikhoan', $taikhoan, PDO::PARAM_STR);
