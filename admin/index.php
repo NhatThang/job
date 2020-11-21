@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+    require_once("../helper/helper.php");
+    if(isset($_SESSION['admin'])){
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -538,5 +543,11 @@
     <script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
-
 </html>
+<?php 
+} else{
+    redirect('../index.php');
+    
+}
+
+?>
