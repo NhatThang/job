@@ -54,8 +54,8 @@
                                         </button>
                                     </form>
                                     <hr>
-                                    <?php if(isset($_SESSION['changesuccess'])){echo "<div class='alert alert-success'>".$_SESSION['changesuccess']."</div>";}?>
-                                    <?php if(isset($_SESSION['changefailed'])){echo "<div class='alert alert-danger'>".$_SESSION['changefailed']."</div>";}?>
+                                    <?php if(isset($_SESSION['changesuccess'])){echo "<script>alert('Bạn đã thay đổi thành công');</script>";}?>
+                                    <?php if(isset($_SESSION['changefailed'])){echo "<script>alert('Mật khẩu cũ không chính xác');</script>";}?>
                                 </div>
                             </div>
                         </div>

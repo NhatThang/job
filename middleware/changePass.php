@@ -27,11 +27,9 @@
                     redirect('../admin/changepass.php');
                 }
             }else{
-                $_SESSION['changefailed'] = 'Mật khẩu cũ không đúng';
+                $_SESSION['changefailed'] = 'Mật khẩu cũ không chính xác';
                 redirect('../admin/changepass.php');
             }
-        }else{
-            echo 'err';
         }
     } catch (PDOException $e) {
         echo "Failed: ".$e->getMessage();

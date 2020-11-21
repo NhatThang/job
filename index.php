@@ -18,8 +18,8 @@
         </div>
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                <?php if(isset($_SESSION['inserted'])){echo "<div class='alert alert-success'>".$_SESSION['inserted']."</div>";}?>
-                <?php if(isset($_SESSION['danger'])){echo "<div class='alert alert-danger'>".$_SESSION['danger']."</div>";}?>
+                <?php if(isset($_SESSION['inserted'])){echo "<script>alert('Bạn đã gửi thành công');</script>";}?>
+                <?php if(isset($_SESSION['danger'])){echo "<script>alert('Vui lòng nhập dữ liệu');</script>";}?>
                 <form action="request/index.php" method="POST">
                     <div class="form-group mb-1">
                         <input type="text" name="hovaten" id="" class="form-control info" placeholder="Họ và tên" aria-describedby="helpId">
@@ -57,7 +57,7 @@
                     Login admin
                 </div>
                 <div class="card-body">
-                <?php if(isset($_SESSION['failedLg'])){echo "<div class='alert alert-danger'>".$_SESSION['failedLg']."</div>";}?>
+                <?php if(isset($_SESSION['failedLg'])){echo "<script>alert('Tài khoản hoặc mật khẩu không chính xác');</script>";}?>
                     <form action="request/index2.php" method="post">
                         <div class="form-group">
                           <label for="">Tài khoản</label>

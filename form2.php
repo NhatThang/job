@@ -18,8 +18,8 @@
         </div>
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                <?php if(isset($_SESSION['inserted'])){echo "<div class='alert alert-success'>".$_SESSION['inserted']."</div>";}?>
-                <?php if(isset($_SESSION['danger'])){echo "<div class='alert alert-danger'>".$_SESSION['danger']."</div>";}?>
+                <?php if(isset($_SESSION['inserted'])){echo "<script>alert('Bạn đã gửi thành công');</script>";}?>
+                <?php if(isset($_SESSION['danger'])){echo "<script>alert('Vui lòng nhập dữ liệu');</script>";}?>
                 <form action="request/index3.php" method="POST">
                     <div class="form-group mb-1">
                         <input type="text" name="hovaten" id="" class="form-control info" placeholder="Họ và tên" aria-describedby="helpId">
