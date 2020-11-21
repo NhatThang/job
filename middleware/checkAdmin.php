@@ -22,7 +22,7 @@
             $count = $pre->fetchColumn();
             if($count > 0){
                 $_SESSION['admin'] = 'admin';
-                redirect("../admin/index");
+                redirect("../admin/index.php");
             }else{
                 $_SESSION['failedLg'] = 'Tài khoản hoặc mật khẩu không chính xác';
                 redirect('../index.php');
